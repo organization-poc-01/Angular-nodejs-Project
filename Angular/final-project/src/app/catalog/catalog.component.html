@@ -1,0 +1,9 @@
+<div class="catalog">
+    <app-book
+      *ngFor="let book of books"
+      [title]="book.title"
+      [description]="book.description"
+      [imageUrl]="book.imageUrl"
+    ></app-book>
+  </div>
+  
