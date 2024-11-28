@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
+.full-screen-gif {
+    background-image: url('../../../public/books.gif'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 94vh; 
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ .heading{
+    color: white;
+    font-size: 2em;
+    font-family: 'Libre Baskerville', serif;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ } 
