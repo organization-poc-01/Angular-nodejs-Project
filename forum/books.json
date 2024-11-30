@@ -1,0 +1,82 @@
+[
+    {
+        "title": "1984",
+        "short_description": "A dystopian tale of totalitarian control.",
+        "long_description": "George Orwell's '1984' explores a bleak future where a totalitarian regime, led by Big Brother, controls every aspect of life. Through the story of Winston Smith, it examines themes of surveillance, freedom, and truth.",
+        "image": "https://m.media-amazon.com/images/I/612ADI+BVlL._AC_UF1000,1000_QL80_.jpg",
+        "year": 1949,
+        "author": "George Orwell"
+    },
+    {
+        "title": "To Kill a Mockingbird",
+        "short_description": "A story of justice and racial inequality.",
+        "long_description": "Harper Lee's classic novel delves into racial injustice in the American South through the eyes of Scout Finch. Her father, Atticus Finch, defends an innocent Black man accused of a crime, revealing the depths of human empathy and prejudice.",
+        "image": "https://m.media-amazon.com/images/I/81aY1lxk+9L.jpg",
+        "year": 1960,
+        "author": "Harper Lee"
+    },
+    {
+        "title": "The Great Gatsby",
+        "short_description": "A critique of the American Dream.",
+        "long_description": "F. Scott Fitzgerald's 'The Great Gatsby' examines the opulence and disillusionment of the Roaring Twenties through the tragic tale of Jay Gatsby's pursuit of love and success.",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg",
+        "year": 1925,
+        "author": "F. Scott Fitzgerald"
+    },
+    {
+        "title": "Moby-Dick",
+        "short_description": "A tale of obsession and revenge.",
+        "long_description": "Herman Melville's 'Moby-Dick' follows Captain Ahab's relentless pursuit of the white whale that maimed him, exploring themes of vengeance, humanity, and the sea's power.",
+        "image": "https://m.media-amazon.com/images/I/71d5wo+-MuL._AC_UF1000,1000_QL80_.jpg",
+        "year": 1851,
+        "author": "Herman Melville"
+    },
+    {
+        "title": "Pride and Prejudice",
+        "short_description": "A romance with wit and critique of society.",
+        "long_description": "Jane Austen's 'Pride and Prejudice' follows Elizabeth Bennet as she navigates love, class, and societal expectations, offering sharp observations of early 19th-century England.",
+        "image": "https://m.media-amazon.com/images/I/812wzoJvRLL._AC_UF1000,1000_QL80_.jpg",
+        "year": 1813,
+        "author": "Jane Austen"
+    },
+    {
+        "title": "The Catcher in the Rye",
+        "short_description": "A rebellious teen's journey in New York.",
+        "long_description": "J.D. Salinger's 'The Catcher in the Rye' tells the story of Holden Caulfield, a disaffected teenager wandering through New York City while grappling with alienation and identity.",
+        "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1398034300i/5107.jpg",
+        "year": 1951,
+        "author": "J.D. Salinger"
+    },
+    {
+        "title": "The Hobbit",
+        "short_description": "A fantasy adventure of a reluctant hero.",
+        "long_description": "J.R.R. Tolkien's 'The Hobbit' follows Bilbo Baggins, a hobbit thrust into an epic quest to reclaim a treasure guarded by the dragon Smaug, discovering courage and friendship along the way.",
+        "image": "https://m.media-amazon.com/images/I/712cDO7d73L.jpg",
+        "year": 1937,
+        "author": "J.R.R. Tolkien"
+    },
+    {
+        "title": "The Alchemist",
+        "short_description": "A journey of self-discovery.",
+        "long_description": "Paulo Coelho's 'The Alchemist' follows Santiago, a shepherd, on his quest to find treasure, learning profound lessons about following one's dreams and the interconnectedness of life.",
+        "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1654371463i/18144590.jpg",
+        "year": 1988,
+        "author": "Paulo Coelho"
+    },
+    {
+        "title": "Brave New World",
+        "short_description": "A dystopian society obsessed with control.",
+        "long_description": "Aldous Huxley's 'Brave New World' presents a chilling vision of a future where technology, conditioning, and conformity create a superficially perfect but deeply flawed society.",
+        "image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/62/BraveNewWorld_FirstEdition.jpg/220px-BraveNewWorld_FirstEdition.jpg",
+        "year": 1932,
+        "author": "Aldous Huxley"
+    },
+    {
+        "title": "The Road",
+        "short_description": "A haunting post-apocalyptic journey.",
+        "long_description": "Cormac McCarthy's 'The Road' tells the story of a father and son traveling through a desolate, post-apocalyptic world, exploring themes of survival, love, and hope amidst despair.",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjz1Ht00tV0IlSf7-CbZCNmDtgy8mG3Oa_7g&s",
+        "year": 2006,
+        "author": "Cormac McCarthy"
+    }
+]
