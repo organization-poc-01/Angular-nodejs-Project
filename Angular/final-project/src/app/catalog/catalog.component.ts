@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BookComponent } from '../book/book.component';
+import { ApiService } from '../api.service';
+import { Book } from '../types/books';
 
 @Component({
   selector: 'app-catalog',
@@ -9,13 +11,16 @@ import { BookComponent } from '../book/book.component';
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.css'],
 })
-export class CatalogComponent {
+export class CatalogComponent implements OnInit {
+  books: Book[] = [];
+  isLoading = true;
 
-  books = [
-    {
-      title: 'Dummy Book Title',
-      description: 'This is a dummy description of the book.',
-      imageUrl: 'assets/dummy-book.jpg', // Replace with actual image URL
-    },
-  ];
+  constructor(private apiService: ApiService) {}
+
+  ngOnInit() {
+    this.apiService.getBooks().subscribe((books) => {
+      this.books = books;
+      this.isLoading = false;
+    });
+  }
 }

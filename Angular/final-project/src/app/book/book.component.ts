@@ -1,14 +1,16 @@
-import { Component, Input  } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { Book } from '../types/books';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-book',
   standalone: true,
-  imports: [],
+  imports: [RouterLink, CommonModule],
   templateUrl: './book.component.html',
-  styleUrl: './book.component.css'
+  styleUrls: ['./book.component.css'],
 })
 export class BookComponent {
-  @Input() title: string = 'Book Title';
-  @Input() description: string = 'This is a description of the book.';
-  @Input() imageUrl: string = 'assets/dummy-book.jpg';
+  @Input() book!: Book; 
+  
 }

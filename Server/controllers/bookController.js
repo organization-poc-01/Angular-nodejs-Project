@@ -1,19 +1,19 @@
 const { Book } = require('../models/bookModel'); 
 
-// Get all books
+
 function getBooks(req, res, next) {
     Book.find()
-        .populate('userId') // Populates the user who added the book
+        .populate('userId')
         .then(books => res.json(books))
         .catch(next);
 }
 
-// Get a single book by ID
+
 function getBook(req, res, next) {
     const { bookId } = req.params;
 
     Book.findById(bookId)
-        .populate('userId') // Populates the user who added the book
+        .populate('userId')
         .then(book => {
             if (!book) return res.status(404).json({ message: 'Book not found' });
             res.json(book);
@@ -21,7 +21,6 @@ function getBook(req, res, next) {
         .catch(next);
 }
 
-// Create a new book
 function createBook(req, res, next) {
     const { title, shortDescription, longDescription, image, year, author } = req.body;
     const { _id: userId } = req.user; // Assume `req.user` contains the authenticated user's info
@@ -31,7 +30,7 @@ function createBook(req, res, next) {
         .catch(next);
 }
 
-// Update an existing book
+
 function updateBook(req, res, next) {
     const { bookId } = req.params;
     const updateData = req.body;
@@ -44,7 +43,6 @@ function updateBook(req, res, next) {
         .catch(next);
 }
 
-// Delete a book
 function deleteBook(req, res, next) {
     const { bookId } = req.params;
 

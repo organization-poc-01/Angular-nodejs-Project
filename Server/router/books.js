@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const Book = require('../models/bookModel'); // Adjust the path as needed
+const Book = require('../models/bookModel'); 
 
-// Get all books
+
 router.get('/', async (req, res) => {
   try {
     const books = await Book.find();
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Get a single book by ID
+
 router.get('/:id', async (req, res) => {
   try {
     const book = await Book.findById(req.params.id);
@@ -23,7 +23,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Create a new book
+
 router.post('/', async (req, res) => {
   const book = new Book({
     title: req.body.title,
@@ -41,7 +41,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// Update a book
+
 router.patch('/:id', async (req, res) => {
   try {
     const book = await Book.findById(req.params.id);
@@ -61,7 +61,7 @@ router.patch('/:id', async (req, res) => {
   }
 });
 
-// Delete a book
+
 router.delete('/:id', async (req, res) => {
   try {
     const book = await Book.findById(req.params.id);

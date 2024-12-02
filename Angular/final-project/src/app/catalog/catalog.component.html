@@ -1,9 +1,10 @@
-<div class="catalog">
-    <app-book
-      *ngFor="let book of books"
-      [title]="book.title"
-      [description]="book.description"
-      [imageUrl]="book.imageUrl"
-    ></app-book>
-  </div>
-  
+<div class="catalog" *ngIf="!isLoading; else loading">
+  <app-book
+    *ngFor="let book of books"
+    [book]="book"
+  ></app-book>
+</div>
+
+<ng-template #loading>
+  <p>Loading books...</p>
+</ng-template>

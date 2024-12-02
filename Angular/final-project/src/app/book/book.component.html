@@ -1,6 +1,10 @@
 <div class="card">
-    <img [src]="imageUrl" alt="Book Image" class="card-image" />
-    <h2 class="card-title">{{ title }}</h2>
-    <p class="card-description">{{ description }}</p>
+  <img [src]="book.image" alt="Book Image" class="card-image" />
+  <h2 class="card-title">{{ book.title }}</h2>
+  <p class="card-author">by {{ book.author }} ({{ book.year }})</p>
+  <p class="card-description">{{ book.short_description }}</p>
+
+  <div class="overlay">
+    <a [routerLink]="['/books', book._id]" class="details-button">Show Details</a>
   </div>
-  
+</div>
