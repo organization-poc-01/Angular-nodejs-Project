@@ -43,6 +43,10 @@ const userSchema = new mongoose.Schema({
     posts: [{
         type: ObjectId,
         ref: "Post"
+    }],
+    books: [{
+        type: ObjectId,
+        ref: "Book"  // Това предполага, че имаш модел Book
     }]
 }, { timestamps: { createdAt: 'created_at' } });
 

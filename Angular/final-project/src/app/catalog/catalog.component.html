@@ -1,10 +1,7 @@
 <div class="catalog" *ngIf="!isLoading; else loading">
-  <app-book
-    *ngFor="let book of books"
-    [book]="book"
-  ></app-book>
+  <app-book *ngFor="let book of books" [book]="book"></app-book>
 </div>
 
 <ng-template #loading>
-  <p>Loading books...</p>
+  <app-spinner></app-spinner>
 </ng-template>

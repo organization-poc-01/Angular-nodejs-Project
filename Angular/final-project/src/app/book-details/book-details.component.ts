@@ -3,11 +3,13 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service';
 import { Book } from '../types/books';
 import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { SpinnerComponent } from '../spinner/spinner.component';
 
 @Component({
   selector: 'app-book-details',
   standalone: true,
-  imports:[RouterLink],
+  imports: [RouterLink, CommonModule, SpinnerComponent],
   templateUrl: './book-details.component.html',
   styleUrls: ['./book-details.component.css']
 })
@@ -28,5 +30,13 @@ export class BookDetailsComponent implements OnInit {
         this.isLoading = false;
       });
     }
+  }
+
+  get isLoadingValue() {
+    return this.isLoading;
+  }
+
+  get bookData() {
+    return this.book;
   }
 }

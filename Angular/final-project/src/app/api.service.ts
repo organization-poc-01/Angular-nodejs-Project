@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from '../enviroments/enviroments';
 import { Book } from './types/books'; 
 
 @Injectable({
@@ -9,13 +8,23 @@ import { Book } from './types/books';
 export class ApiService {
   constructor(private http: HttpClient) {}
 
+  
   getBooks() {
-    const { apiUrl } = environment;
-    return this.http.get<Book[]>(`${apiUrl}/books`);
+    return this.http.get<Book[]>(`/api/books`);
   }
 
+  
   getSingleBook(id: string) {
-    const { apiUrl } = environment;
-    return this.http.get<Book>(`${apiUrl}/books/${id}`);
+    return this.http.get<Book>(`/api/books/${id}`);
+  }
+
+  
+  updateBook(bookId: string, updatedData: Partial<Book>) {
+    return this.http.put<Book>(`/api/books/${bookId}`, updatedData);
+  }
+
+  
+  deleteBook(bookId: string) {
+    return this.http.delete(`/api/books/${bookId}`);
   }
 }

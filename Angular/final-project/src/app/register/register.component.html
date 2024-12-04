@@ -1,0 +1,123 @@
+<div class="form-container">
+  <form [formGroup]="form" (ngSubmit)="register()">
+    <fieldset>
+      <h2>Registration Form</h2>
+
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          id="username"
+          formControlName="username"
+          placeholder="Enter your username"
+          [class]="
+            username?.invalid && username?.touched
+              ? 'input-error'
+              : username?.valid && username?.touched
+              ? 'input-valid'
+              : ''
+          "
+        />
+        @if(username?.touched) {
+          <div>
+            @if(username?.errors?.['required']) {
+              <small class="error">Username is required</small>
+            }
+            @if(username?.errors?.['minlength']) {
+              <small class="error">Username must be at least 5 characters</small>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="Enter your email"
+          [class]="
+            email?.invalid && email?.touched
+              ? 'input-error'
+              : email?.valid && email?.touched
+              ? 'input-valid'
+              : ''
+          "
+        />
+        @if(email?.touched) {
+          <div>
+            @if(email?.errors?.['required']) {
+              <small class="error">Email is required</small>
+            }
+            @if(email?.errors?.['email']) {
+              <small class="error">Invalid email format</small>
+            }
+          </div>
+        }
+      </div>
+
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          placeholder="Enter your password"
+          [class]="
+            password?.invalid && password?.touched
+              ? 'input-error'
+              : password?.valid && password?.touched
+              ? 'input-valid'
+              : ''
+          "
+        />
+        @if(password?.touched) {
+          <div>
+            @if(password?.errors?.['required']) {
+              <small class="error">Password is required</small>
+            }
+            @if(password?.errors?.['minlength']) {
+              <small class="error">Password must be at least 5 characters</small>
+            }
+          </div>
+        }
+      </div>
+
+    
+      <div class="form-group">
+        <label for="rePassword">Confirm Password:</label>
+        <input
+          type="password"
+          id="rePassword"
+          formControlName="rePassword"
+          placeholder="Re-enter your password"
+          [class]="
+            rePassword?.invalid && rePassword?.touched
+              ? 'input-error'
+              : rePassword?.valid && rePassword?.touched
+              ? 'input-valid'
+              : ''
+          "
+        />
+        @if(rePassword?.touched) {
+          <div>
+            @if(rePassword?.errors?.['required']) {
+              <small class="error">Confirm Password is required</small>
+            }
+          </div>
+        }
+      </div>
+
+      <button type="submit" [disabled]="form.invalid">
+        Create Account
+      </button>
+
+      <p class="text-center">
+        Already have an account?
+        <a routerLink="/login">Log In</a>
+      </p>
+    </fieldset>
+  </form>
+</div>

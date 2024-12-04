@@ -1,4 +1,9 @@
-<div>
+<div class="book-details-container">
+  <ng-container *ngIf="isLoading; else bookDetails">
+    <app-spinner></app-spinner>
+  </ng-container>
+
+  <ng-template #bookDetails>
     <div class="book-details card">
       <img [src]="book.image" alt="Book Image" class="book-image" />
       <div class="book-info">
@@ -8,9 +13,5 @@
         <button class="back-button" [routerLink]="['/catalog']">Back</button>
       </div>
     </div>
-  </div>
-  
-  <ng-template #loading>
-    <p>Loading book details...</p>
   </ng-template>
-  
+</div>

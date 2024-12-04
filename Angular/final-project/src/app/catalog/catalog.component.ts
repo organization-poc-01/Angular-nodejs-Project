@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { BookComponent } from '../book/book.component';
 import { ApiService } from '../api.service';
 import { Book } from '../types/books';
+import { SpinnerComponent } from '../spinner/spinner.component';
 
 @Component({
   selector: 'app-catalog',
   standalone: true,
-  imports: [CommonModule, BookComponent],
+  imports: [CommonModule, BookComponent, SpinnerComponent],
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.css'],
 })
