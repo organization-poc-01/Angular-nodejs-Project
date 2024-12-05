@@ -1,0 +1,31 @@
+.not-found-container {
+    text-align: center;
+    padding: 2rem;
+    font-family: 'Libre Baskerville', serif;
+  }
+  
+  .not-found-container h1 {
+    font-size: 3rem;
+    color: #333;
+  }
+  
+  .not-found-container p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  .back-button {
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #6b4f4b;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .back-button:hover {
+    background-color: #503736;
+  }
+  

@@ -4,6 +4,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, 
@@ -12,5 +13,6 @@ export const routes: Routes = [
   { path: 'books/:id', component: BookDetailsComponent },         
   { path: 'login', component: LoginComponent },        
   { path: 'register', component: RegisterComponent },        
-  // { path: '**', redirectTo: '/home' },                 
+  { path: '**', component: NotFoundComponent },        
+  { path: '**', redirectTo: '/home' },                 
 ];
