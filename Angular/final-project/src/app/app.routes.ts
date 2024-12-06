@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AddBookComponent } from './add-book/add-book.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
+import { SearchComponent } from './search/search.component';
 
 
 export const routes: Routes = [
@@ -17,7 +18,8 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },        
   { path: 'register', component: RegisterComponent },
   {path: 'add-book', component: AddBookComponent},        
-  { path: 'catalog/edit/:id', component: EditBookComponent },       
+  { path: 'catalog/edit/:id', component: EditBookComponent },  
+  { path: 'search', component: SearchComponent },     
   { path: '**', component: NotFoundComponent },
   // { path: '**', redirectTo: '/home' },                 
 ];

@@ -6,9 +6,11 @@
   </div>
 
   <div class="nav-middle">
-    <form class="search-form">
+    <form class="search-form" (ngSubmit)="searchBook()">
       <input
         type="text"
+        [(ngModel)]="searchTerm"
+        name="search"
         class="search-input"
         placeholder="Search for a book..."
       />
