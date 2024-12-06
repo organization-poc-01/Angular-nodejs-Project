@@ -17,13 +17,11 @@ export interface UserForAuth {
   email: string;
   tel?: string;
   password: string;
-  id: string;
+  _id: string;
   books: string[]
 }
 
 export interface ProfileDetails {
   username: string;
   email: string;
-  tel: string;
-  books: string[]
 }

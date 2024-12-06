@@ -8,6 +8,6 @@ export interface Book {
   image: string; 
   year: number; 
   author: string; 
-  userId: User; 
+  owner: string; 
   __v: number; 
 }

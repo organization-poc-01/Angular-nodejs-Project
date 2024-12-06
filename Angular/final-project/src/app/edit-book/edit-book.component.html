@@ -1,0 +1,73 @@
+<div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="editBook()">
+      <fieldset>
+        <h2>Edit Book</h2>
+  
+  
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input
+            type="text"
+            id="title"
+            formControlName="title"
+            placeholder="Enter the book title"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="author">Author:</label>
+          <input
+            type="text"
+            id="author"
+            formControlName="author"
+            placeholder="Enter the author's name"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="year">Year:</label>
+          <input
+            type="text"
+            id="year"
+            formControlName="year"
+            placeholder="Enter the year"
+          />
+        </div>
+  
+  
+        <div class="form-group">
+          <label for="short_description">Short Description:</label>
+          <textarea
+            id="short_description"
+            formControlName="short_description"
+            placeholder="Enter a short description"
+          ></textarea>
+        </div>
+  
+
+        <div class="form-group">
+          <label for="long_description">Long Description:</label>
+          <textarea
+            id="long_description"
+            formControlName="long_description"
+            placeholder="Enter a detailed description"
+          ></textarea>
+        </div>
+ 
+        <div class="form-group">
+          <label for="image">Image URL:</label>
+          <input
+            type="text"
+            id="image"
+            formControlName="image"
+            placeholder="Enter the image URL"
+          />
+        </div>
+  
+        <button type="submit" [disabled]="form.invalid">
+          Save Changes
+        </button>
+      </fieldset>
+    </form>
+  </div>
+  

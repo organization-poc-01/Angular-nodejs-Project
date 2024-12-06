@@ -46,7 +46,7 @@ const userSchema = new mongoose.Schema({
     }],
     books: [{
         type: ObjectId,
-        ref: "Book"  // Това предполага, че имаш модел Book
+        ref: "Book" 
     }]
 }, { timestamps: { createdAt: 'created_at' } });
 

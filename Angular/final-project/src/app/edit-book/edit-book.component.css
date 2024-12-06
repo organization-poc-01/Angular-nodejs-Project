@@ -1,0 +1,122 @@
+/* Container styling for the entire form */
+.form-container {
+    max-width: 600px; /* Limit the form width for better readability */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 2rem;
+    background-color: #f5f5f1; /* Light background color to make form fields stand out */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    font-family: 'Libre Baskerville', serif; /* Using a serif font for a classy look */
+  }
+  
+  /* Fieldset styling */
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Styling for form headings */
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Styling individual form groups (each field) */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Label styling for fields */
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Input field styling */
+  input[type='text'],
+  input[type='password'],
+  input[type='email'],
+  textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+  }
+  
+  /* Focus state for inputs and textarea */
+  input[type='text']:focus,
+  input[type='password']:focus,
+  input[type='email']:focus,
+  textarea:focus {
+    border-color: #6b4f4b; /* Darker border when focused */
+    outline: none; /* Remove the default outline */
+  }
+  
+  /* Textarea styling */
+  textarea {
+    min-height: 100px;
+  }
+  
+  /* Styling for the submit button */
+  button[type='submit'] {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #234465; /* Blue color for the button */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  /* Disabled state for the submit button */
+  button[type='submit']:disabled {
+    background-color: grey; /* Grey out the button when disabled */
+    cursor: not-allowed;
+  }
+  
+  /* Hover state for the submit button */
+  button[type='submit']:hover:not(:disabled) {
+    background-color: #1c3454; /* Darker blue when hovered */
+  }
+  
+  /* Styling for error messages */
+  .error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Styling for valid and invalid input states */
+  .input-error {
+    border-color: red;
+  }
+  
+  .input-valid {
+    border-color: green;
+  }
+  
+  /* Styling for the "Back" button (optional) */
+  .back-button {
+    display: block;
+    margin-top: 1.5rem;
+    padding: 0.8rem;
+    background-color: #6b4f4b;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .back-button:hover {
+    background-color: #5a3f3a;
+  }
+  

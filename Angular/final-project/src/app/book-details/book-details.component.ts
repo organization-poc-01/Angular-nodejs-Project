@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { Book } from '../types/books';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { SpinnerComponent } from '../spinner/spinner.component';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-book-details',
@@ -19,8 +20,15 @@ export class BookDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private apiService: ApiService
+    private apiService: ApiService,
+    private userService: UserService,
+    private router: Router 
   ) {}
+  
+  get isBookOwner(): boolean {
+    const userBooks = this.userService.user?.books || [];
+    return userBooks.includes(this.book._id);
+  }
 
   ngOnInit(): void {
     const bookId = this.route.snapshot.paramMap.get('id');
@@ -28,6 +36,16 @@ export class BookDetailsComponent implements OnInit {
       this.apiService.getSingleBook(bookId).subscribe((book) => {
         this.book = book;
         this.isLoading = false;
+      }); 
+    }
+  }
+
+
+
+  deleteBook(): void {
+    if (confirm('Are you sure you want to delete this book?')) {
+      this.apiService.deleteBook(this.book._id).subscribe(() => {
+        this.router.navigate(['/catalog']);
       });
     }
   }

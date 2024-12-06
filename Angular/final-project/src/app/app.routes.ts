@@ -5,6 +5,9 @@ import { BookDetailsComponent } from './book-details/book-details.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AddBookComponent } from './add-book/add-book.component';
+import { EditBookComponent } from './edit-book/edit-book.component';
+
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, 
@@ -12,7 +15,9 @@ export const routes: Routes = [
   { path: 'catalog', component: CatalogComponent }, 
   { path: 'books/:id', component: BookDetailsComponent },         
   { path: 'login', component: LoginComponent },        
-  { path: 'register', component: RegisterComponent },        
-  { path: '**', component: NotFoundComponent },        
-  { path: '**', redirectTo: '/home' },                 
+  { path: 'register', component: RegisterComponent },
+  {path: 'add-book', component: AddBookComponent},        
+  { path: 'catalog/edit/:id', component: EditBookComponent },       
+  { path: '**', component: NotFoundComponent },
+  // { path: '**', redirectTo: '/home' },                 
 ];

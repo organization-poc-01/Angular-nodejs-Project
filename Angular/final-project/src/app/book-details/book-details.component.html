@@ -5,12 +5,23 @@
 
   <ng-template #bookDetails>
     <div class="book-details card">
-      <img [src]="book.image" alt="Book Image" class="book-image" />
-      <div class="book-info">
-        <h1>{{ book.title }}</h1>
-        <p class="author">by {{ book.author }} ({{ book.year }})</p>
-        <p class="long-description">{{ book.long_description }}</p>
-        <button class="back-button" [routerLink]="['/catalog']">Back</button>
+      <div class="book-main">
+        <img [src]="book.image" alt="Book Image" class="book-image" />
+        <div class="book-info">
+          <h1>{{ book.title }}</h1>
+          <p class="author">by {{ book.author }} ({{ book.year }})</p>
+          <p class="long-description">{{ book.long_description }}</p>
+          <button class="back-button" [routerLink]="['/catalog']">Back</button>
+        </div>
+      </div>
+      
+      <div *ngIf="isBookOwner" class="delete-and-edit">
+        <button [routerLink]="['/catalog/edit', book._id]" class="edit-button">
+          Edit
+        </button>
+        <button (click)="deleteBook()" class="delete-button">
+          Delete
+        </button>
       </div>
     </div>
   </ng-template>

@@ -11,17 +11,23 @@ import { UserService } from '../user.service';
 })
 export class HeaderComponent {
   get isLoggedIn(): boolean {
+
     return this.userService.isLogged;
   }
 
   get username(): string {
+
     return this.userService.user?.username || '';
   }
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router) {
+
+
+  }
 
   logout() {
     this.userService.logout().subscribe(() => {
+      console.log("User logged out successfully.");
       this.router.navigate(['/login']);
     });
   }
