@@ -1,9 +1,7 @@
 <div class="book-details-container">
-  <ng-container *ngIf="isLoading; else bookDetails">
+  @if (isLoading) {
     <app-spinner></app-spinner>
-  </ng-container>
-
-  <ng-template #bookDetails>
+  } @else {
     <div class="book-details card">
       <div class="book-main">
         <img [src]="book.image" alt="Book Image" class="book-image" />
@@ -15,14 +13,16 @@
         </div>
       </div>
       
-      <div *ngIf="isBookOwner" class="delete-and-edit">
-        <button [routerLink]="['/catalog/edit', book._id]" class="edit-button">
-          Edit
-        </button>
-        <button (click)="deleteBook()" class="delete-button">
-          Delete
-        </button>
-      </div>
+      @if (isBookOwner) {
+        <div class="delete-and-edit">
+          <button [routerLink]="['/catalog/edit', book._id]" class="edit-button">
+            Edit
+          </button>
+          <button (click)="deleteBook()" class="delete-button">
+            Delete
+          </button>
+        </div>
+      }
     </div>
-  </ng-template>
+  }
 </div>

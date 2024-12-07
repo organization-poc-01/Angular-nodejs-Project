@@ -3,14 +3,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../api.service';
 import { Book } from '../types/books';
 import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
 import { SpinnerComponent } from '../spinner/spinner.component';
 import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-book-details',
   standalone: true,
-  imports: [RouterLink, CommonModule, SpinnerComponent],
+  imports: [RouterLink, SpinnerComponent],
   templateUrl: './book-details.component.html',
   styleUrls: ['./book-details.component.css']
 })

@@ -1,7 +1,9 @@
-<div class="catalog" *ngIf="!isLoading; else loading">
-  <app-book *ngFor="let book of books" [book]="book"></app-book>
-</div>
-
-<ng-template #loading>
+@if (!isLoading) {
+  <div class="catalog">
+    @for (book of books; track book._id) {
+      <app-book [book]="book"></app-book>
+    }
+  </div>
+} @else {
   <app-spinner></app-spinner>
-</ng-template>
+}
