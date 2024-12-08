@@ -1,12 +1,15 @@
 <div class="search-results-container">
-    <ng-container *ngIf="isLoading">
-      <app-spinner></app-spinner>
-    </ng-container>
-  
-    <ng-container *ngIf="!isLoading && filteredBooks.length > 0">
-      <app-book *ngFor="let book of filteredBooks" [book]="book"></app-book>
-    </ng-container>
-  
-    <p *ngIf="!isLoading && filteredBooks.length === 0">No books found for your search.</p>
-  </div>
-  
+  @if (isLoading) {
+    <app-spinner></app-spinner>
+  }
+
+  @if (!isLoading && filteredBooks.length > 0) {
+    @for (book of filteredBooks; track book._id) {
+      <app-book [book]="book"></app-book>
+    }
+  }
+
+  @if (!isLoading && filteredBooks.length === 0) {
+    <p>No books found for your search.</p>
+  }
+</div>
