@@ -1,0 +1,41 @@
+.catalog-container {
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+    padding: 1rem;
+    margin-top: 100px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .catalog-container h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .catalog {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .catalog > app-book {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .catalog > app-book:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .catalog-container p {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    margin-top: 2rem;
+  }
+  

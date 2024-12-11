@@ -1,0 +1,14 @@
+<div class="catalog-container">
+    <h1>Hello, {{username}}!</h1>
+    <h3>Your books:</h3>
+    @if (books.length > 0) {
+      <div class="catalog">
+        @for (book of books; track book._id) {
+          <app-book [book]="book"></app-book>
+        }
+      </div>
+    } @else {
+      <p>No books available at the moment.</p>
+    }
+  </div>
+  

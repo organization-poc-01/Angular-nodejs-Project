@@ -18,7 +18,7 @@ export const appInterceptor: HttpInterceptorFn = (req, next) => {
 
   const router = inject(Router);
 
-  return next(req).pipe(
+  return next(req).pipe( 
     catchError((err) => {
       
       if (err.status === 401) {

@@ -21,6 +21,7 @@
   <div class="nav-right">
     @if(isLoggedIn) {
       <a routerLink="/add-book" class="nav-item">Add Book</a>
+      <a routerLink="/profile" class="nav-item">My Profile</a>
       <a (click)="logout()" class="nav-item">Logout</a>
     } @else {
       <a routerLink="/login" class="nav-item">Login</a>

@@ -9,6 +9,7 @@ import { AddBookComponent } from './add-book/add-book.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { SearchComponent } from './search/search.component';
 import { AboutComponent } from './about/about.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 export const routes: Routes = [
@@ -22,6 +23,6 @@ export const routes: Routes = [
   {path: 'add-book', component: AddBookComponent},        
   { path: 'catalog/edit/:id', component: EditBookComponent },  
   { path: 'search', component: SearchComponent },     
-  { path: '**', component: NotFoundComponent },
-  // { path: '**', redirectTo: '/home' },                 
+  { path: 'profile', component: ProfileComponent },     
+  { path: '**', component: NotFoundComponent },        
 ];
