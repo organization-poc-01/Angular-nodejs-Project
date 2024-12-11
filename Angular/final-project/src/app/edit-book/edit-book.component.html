@@ -1,73 +1,145 @@
 <div class="form-container">
-    <form [formGroup]="form" (ngSubmit)="editBook()">
-      <fieldset>
-        <h2>Edit Book</h2>
-  
-  
-        <div class="form-group">
-          <label for="title">Title:</label>
-          <input
-            type="text"
-            id="title"
-            formControlName="title"
-            placeholder="Enter the book title"
-          />
-        </div>
-  
-        <div class="form-group">
-          <label for="author">Author:</label>
-          <input
-            type="text"
-            id="author"
-            formControlName="author"
-            placeholder="Enter the author's name"
-          />
-        </div>
+  <form [formGroup]="form" (ngSubmit)="editBook()">
+    <fieldset>
+      <h2>Add Book Form</h2>
 
-        <div class="form-group">
-          <label for="year">Year:</label>
-          <input
-            type="text"
-            id="year"
-            formControlName="year"
-            placeholder="Enter the year"
-          />
-        </div>
-  
-  
-        <div class="form-group">
-          <label for="short_description">Short Description:</label>
-          <textarea
-            id="short_description"
-            formControlName="short_description"
-            placeholder="Enter a short description"
-          ></textarea>
-        </div>
-  
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input
+          type="text"
+          id="title"
+          formControlName="title"
+          placeholder="Enter book title"
+          [class]="
+            isFieldTextMissing('title')
+              ? 'input-error'
+              : 'input-valid'
+          "
+        />
+        @if(form.get('title')?.touched) {
+          <div>
+            @if(form.get('title')?.errors?.['required']) {
+              <small class="error">Title is required</small>
+            }
+          </div>
+        }
+      </div>
 
-        <div class="form-group">
-          <label for="long_description">Long Description:</label>
-          <textarea
-            id="long_description"
-            formControlName="long_description"
-            placeholder="Enter a detailed description"
-          ></textarea>
-        </div>
- 
-        <div class="form-group">
-          <label for="image">Image URL:</label>
-          <input
-            type="text"
-            id="image"
-            formControlName="image"
-            placeholder="Enter the image URL"
-          />
-        </div>
-  
-        <button type="submit" [disabled]="form.invalid">
-          Save Changes
-        </button>
-      </fieldset>
-    </form>
-  </div>
-  
+
+      <div class="form-group">
+        <label for="author">Author:</label>
+        <input
+          type="text"
+          id="author"
+          formControlName="author"
+          placeholder="Enter author name"
+          [class]="
+            isFieldTextMissing('author')
+              ? 'input-error'
+              : 'input-valid'
+          "
+        />
+        @if(form.get('author')?.touched) {
+          <div>
+            @if(form.get('author')?.errors?.['required']) {
+              <small class="error">Author is required</small>
+            }
+          </div>
+        }
+      </div>
+
+
+      <div class="form-group">
+        <label for="year">Year:</label>
+        <input
+          type="text"
+          id="year"
+          formControlName="year"
+          placeholder="Enter publication year"
+          [class]="
+            isFieldTextMissing('year') || isYearInvalid
+              ? 'input-error'
+              : 'input-valid'
+          "
+        />
+        @if(form.get('year')?.touched) {
+          <div>
+            @if(form.get('year')?.errors?.['required']) {
+              <small class="error">Year is required</small>
+            }
+            @if(form.get('year')?.errors?.['pattern']) {
+              <small class="error">Year must be 4 digits</small>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="short_description">Short Description:</label>
+        <textarea
+          id="short_description"
+          formControlName="short_description"
+          placeholder="Enter short description"
+          [class]="
+            isFieldTextMissing('short_description')
+              ? 'input-error'
+              : 'input-valid'
+          "
+        ></textarea>
+        @if(form.get('short_description')?.touched) {
+          <div>
+            @if(form.get('short_description')?.errors?.['required']) {
+              <small class="error">Short description is required</small>
+            }
+          </div>
+        }
+      </div>
+
+
+      <div class="form-group">
+        <label for="long_description">Long Description:</label>
+        <textarea
+          id="long_description"
+          formControlName="long_description"
+          placeholder="Enter long description"
+          [class]="
+            isFieldTextMissing('long_description')
+              ? 'input-error'
+              : 'input-valid'
+          "
+        ></textarea>
+        @if(form.get('long_description')?.touched) {
+          <div>
+            @if(form.get('long_description')?.errors?.['required']) {
+              <small class="error">Long description is required</small>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="form-group">
+        <label for="image">Image URL:</label>
+        <input
+          type="text"
+          id="image"
+          formControlName="image"
+          placeholder="Enter image URL"
+          [class]="
+            isFieldTextMissing('image')
+              ? 'input-error'
+              : 'input-valid'
+          "
+        />
+        @if(form.get('image')?.touched) {
+          <div>
+            @if(form.get('image')?.errors?.['required']) {
+              <small class="error">Image URL is required</small>
+            }
+          </div>
+        }
+      </div>
+
+      <button type="submit" [disabled]="form.invalid">Add Book</button>
+    </fieldset>
+  </form>
+</div>

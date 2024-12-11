@@ -32,10 +32,26 @@ export class EditBookComponent implements OnInit {
   bookId: string = '';
 
   constructor(
+    
     private apiService: ApiService,
     private route: ActivatedRoute,
     private router: Router
+
+    
   ) {}
+  isFieldTextMissing(controlName: string) {
+    return (
+      this.form.get(controlName)?.touched &&
+      this.form.get(controlName)?.errors?.['required']
+    );
+
+  }
+  get isYearInvalid() {
+    return (
+      this.form.get('year')?.touched &&
+      this.form.get('year')?.errors?.['pattern']
+    );
+  }
 
   ngOnInit(): void {
 

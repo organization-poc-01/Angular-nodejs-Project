@@ -76,25 +76,24 @@
     transition: background-color 0.3s;
   }
   
-  /* Disabled state for the submit button */
+
   button[type='submit']:disabled {
-    background-color: grey; /* Grey out the button when disabled */
+    background-color: grey; 
     cursor: not-allowed;
   }
   
-  /* Hover state for the submit button */
+
   button[type='submit']:hover:not(:disabled) {
-    background-color: #1c3454; /* Darker blue when hovered */
+    background-color: #1c3454; 
   }
   
-  /* Styling for error messages */
   .error {
     color: red;
     font-size: 0.9rem;
     margin-top: 0.5rem;
   }
   
-  /* Styling for valid and invalid input states */
+
   .input-error {
     border-color: red;
   }
@@ -103,7 +102,6 @@
     border-color: green;
   }
   
-  /* Styling for the "Back" button (optional) */
   .back-button {
     display: block;
     margin-top: 1.5rem;
