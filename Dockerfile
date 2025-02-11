@@ -1,10 +1,15 @@
+FROM node:20-alpine as builder
+
+WORKDIR /app
+
+COPY Angular/final-project /app/
+
+RUN npm ci && \
+    npm run build --prod
+
 FROM nginx:alpine
 
-# Copy only the built index.html from the local dist directory
-COPY Angular/final-project/dist/final-project/browser/index.html /usr/share/nginx/html/
-
-# Copy nginx configuration if needed
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/dist/final-project/index.html /usr/share/nginx/html/
 
 EXPOSE 80
 
