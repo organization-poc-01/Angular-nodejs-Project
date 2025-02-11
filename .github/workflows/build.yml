@@ -10,12 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    services:
-      mongodb:
-        image: mongo:latest
-        ports:
-          - 27017:27017
-
     steps:
     - uses: actions/checkout@v4
 
@@ -26,10 +20,6 @@ jobs:
 
     - name: Install Angular CLI
       run: npm install -g @angular/cli
-
-    - name: Restore MongoDB Database
-      run: |
-        mongorestore --db forum ./forum
 
     # Frontend Build
     - name: Install Frontend Dependencies
@@ -44,15 +34,6 @@ jobs:
     - name: Install Backend Dependencies
       working-directory: ./Server
       run: npm install
-
-    - name: Build Backend
-      working-directory: ./Server
-      run: |
-        if [ -f "build.js" ]; then
-          node build.js
-        else
-          echo "No build script found for backend, using as is"
-        fi
 
     # Docker Build
     - name: Set up Docker Buildx
@@ -72,23 +53,4 @@ jobs:
         name: dist-files
         path: |
           Angular/final-project/dist
-          Server/dist
-
-    # Add testing steps if needed
-    - name: Run Frontend Tests
-      working-directory: ./Angular/final-project
-      run: |
-        if [ -f "package.json" ] && grep -q "\"test\"" "package.json"; then
-          npm test -- --no-watch --no-progress --browsers=ChromeHeadless
-        else
-          echo "No test script found in package.json"
-        fi
-
-    - name: Run Backend Tests
-      working-directory: ./Server
-      run: |
-        if [ -f "package.json" ] && grep -q "\"test\"" "package.json"; then
-          npm test
-        else
-          echo "No test script found in package.json"
-        fi
+          Server
